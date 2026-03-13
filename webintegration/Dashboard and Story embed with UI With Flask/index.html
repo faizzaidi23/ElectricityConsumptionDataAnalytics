@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publishing to Tableau Public — Electricity Consumption Dashboard</title>
+    <meta name="description" content="Step-by-step guide to publishing the Electricity Consumption Dashboard to Tableau Public for web integration.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <span>Tableau Publishing Guide</span>
+            </div>
+            <div class="nav-links">
+                <a href="#prepare">Prepare</a>
+                <a href="#signin">Sign In</a>
+                <a href="#publish">Publish</a>
+                <a href="#embed">Embed</a>
+                <a href="#dashboards">Dashboards</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">⚡ Web Integration Guide</div>
+            <h1>Publishing to <span class="gradient-text">Tableau Public</span></h1>
+            <p class="hero-subtitle">A complete step-by-step guide to publishing, embedding, and sharing your Electricity Consumption Dashboard with the world.</p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Dashboards</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Visualizations</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">33</span>
+                    <span class="stat-label">States Covered</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Years of Data</span>
+                </div>
+            </div>
+            <a href="#prepare" class="hero-cta">Get Started <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+    </header>
+
+    <!-- Step 1: Prepare -->
+    <section class="section" id="prepare">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">01</div>
+                <h2>Prepare Your Dashboard or Story</h2>
+                <p class="section-desc">Before publishing, ensure everything is polished, optimized, and ready for the public audience.</p>
+            </div>
+
+            <div class="checklist-grid">
+                <div class="checklist-card" data-aos="fade-up">
+                    <div class="check-icon complete">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Verify All Sheets</h3>
+                    <p>Confirm that all 15+ worksheets (Top N, Bottom N, State Consumption maps, Monthwise charts, etc.) are rendering correctly with accurate data.</p>
+                </div>
+                <div class="checklist-card" data-aos="fade-up" data-delay="100">
+                    <div class="check-icon complete">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Test All Filters</h3>
+                    <p>Validate that State, Region, Year, Date, and Top N/Bottom N filters work correctly across all three dashboards.</p>
+                </div>
+                <div class="checklist-card" data-aos="fade-up" data-delay="200">
+                    <div class="check-icon complete">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Clean Up Unused Sheets</h3>
+                    <p>Remove or hide any draft/test worksheets that are not part of the final dashboards to reduce file size and clutter.</p>
+                </div>
+                <div class="checklist-card" data-aos="fade-up" data-delay="300">
+                    <div class="check-icon complete">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Optimize Data Source</h3>
+                    <p>Use Tableau extracts (.hyper) instead of live connections. Apply data source filters to exclude unnecessary columns and rows.</p>
+                </div>
+                <div class="checklist-card" data-aos="fade-up" data-delay="400">
+                    <div class="check-icon complete">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Check Dashboard Layout</h3>
+                    <p>Set proper sizing (Fixed or Automatic) for web display. Test both Desktop and Phone layouts for responsive design.</p>
+                </div>
+                <div class="checklist-card" data-aos="fade-up" data-delay="500">
+                    <div class="check-icon complete">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Review Story Flow</h3>
+                    <p>If using Tableau Story, verify story points flow logically — from overview to COVID-19 lockdown impact to regional deep-dive.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-icon">💡</div>
+                <div>
+                    <strong>Pro Tip:</strong> Tableau Public has a <strong>25 MB file size limit</strong>. Use "Extract" instead of "Live" connections and remove hidden sheets to stay under the limit. Our electricity consumption dataset (~851 KB CSV) is well within this threshold.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 2: Sign In -->
+    <section class="section section-dark" id="signin">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">02</div>
+                <h2>Sign In to Tableau Public</h2>
+                <p class="section-desc">Connect your Tableau Desktop to Tableau Public to enable cloud publishing.</p>
+            </div>
+
+            <div class="two-col">
+                <div class="instruction-panel">
+                    <div class="instruction-step">
+                        <div class="inst-num">A</div>
+                        <div>
+                            <h4>Open the Save Dialog</h4>
+                            <p>In Tableau Desktop, navigate to <code>File → Save to Tableau Public As…</code></p>
+                            <p class="note">This option may be grayed out if you have a live database connection. Switch to Extract first.</p>
+                        </div>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="inst-num">B</div>
+                        <div>
+                            <h4>Sign In Window Appears</h4>
+                            <p>A login dialog will pop up asking for your Tableau Public credentials.</p>
+                            <ul>
+                                <li>Enter your <strong>email address</strong></li>
+                                <li>Enter your <strong>password</strong></li>
+                                <li>Click <strong>"Sign In"</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="inst-num">C</div>
+                        <div>
+                            <h4>No Account? Sign Up Free</h4>
+                            <p>If you don't have an account, visit <a href="https://public.tableau.com/app/discover" target="_blank" rel="noopener">public.tableau.com</a> and click <strong>"Sign Up"</strong>. It's completely free.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-panel">
+                    <div class="image-frame">
+                        <div class="frame-dots"><span></span><span></span><span></span></div>
+                        <img src="tableau_save_menu.png" alt="Tableau File Menu — Save to Tableau Public" loading="lazy">
+                    </div>
+                    <div class="image-frame" style="margin-top: 1.5rem;">
+                        <div class="frame-dots"><span></span><span></span><span></span></div>
+                        <img src="tableau_login_dialog.png" alt="Tableau Public Sign In Dialog" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 3: Publish -->
+    <section class="section" id="publish">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">03</div>
+                <h2>Publish Your Workbook</h2>
+                <p class="section-desc">Upload your dashboards to the cloud and make them publicly accessible.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Name Your Workbook</h4>
+                        <p>After signing in, a dialog asks for the workbook name. Use a descriptive title:</p>
+                        <code class="code-block">Plugging into the Future — Electricity Consumption Patterns (2019-2020)</code>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Select Sheets to Publish</h4>
+                        <p>Choose which sheets and dashboards to include. Recommended: publish all 3 dashboards and the story.</p>
+                        <div class="sheet-tags">
+                            <span class="tag tag-dash">Dashboard 1</span>
+                            <span class="tag tag-dash">Dashboard 2</span>
+                            <span class="tag tag-dash">Dashboard 3</span>
+                            <span class="tag tag-story">Story</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Upload Process</h4>
+                        <p>Tableau will extract and upload the data. A progress bar shows the upload status. This typically takes 30–60 seconds for our dataset.</p>
+                        <div class="progress-demo">
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                            <span>Uploading workbook...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot success"></div>
+                    <div class="timeline-content">
+                        <h4>✅ Published Successfully!</h4>
+                        <p>Your browser will automatically open showing the published dashboard on Tableau Public. You'll receive a shareable URL like:</p>
+                        <code class="code-block">https://public.tableau.com/views/PluggingIntoTheFuture/Dashboard1</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 4: Embed -->
+    <section class="section section-dark" id="embed">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">04</div>
+                <h2>Embed in Your Website</h2>
+                <p class="section-desc">After publishing, embed interactive dashboards directly into any webpage.</p>
+            </div>
+
+            <div class="embed-guide">
+                <div class="embed-step">
+                    <h4>1. Get the Embed Code</h4>
+                    <p>On Tableau Public, click the <strong>Share</strong> button (bottom-right of your viz) and copy the embed code.</p>
+                </div>
+                <div class="embed-step">
+                    <h4>2. Paste into HTML</h4>
+                    <p>Add the embed code to your website. Here's the format:</p>
+                    <pre class="code-pre"><code>&lt;div class='tableauPlaceholder' style='width:100%;height:800px;'&gt;
+  &lt;object class='tableauViz' style='width:100%;height:100%;'&gt;
+    &lt;param name='host_url' value='https://public.tableau.com/' /&gt;
+    &lt;param name='site_root' value='' /&gt;
+    &lt;param name='name' value='YourWorkbookName/Dashboard1' /&gt;
+    &lt;param name='tabs' value='yes' /&gt;
+    &lt;param name='toolbar' value='yes' /&gt;
+    &lt;param name='animate_transition' value='yes' /&gt;
+  &lt;/object&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="embed-step">
+                    <h4>3. Add the JavaScript API</h4>
+                    <p>Include Tableau's JS API for full interactivity:</p>
+                    <pre class="code-pre"><code>&lt;script src='https://public.tableau.com/javascripts/api/viz_v1.js'&gt;&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="tip-box tip-warning">
+                <div class="tip-icon">⚠️</div>
+                <div>
+                    <strong>Important:</strong> Tableau Public workbooks are <strong>always public</strong>. Do not publish sensitive or confidential data. Our electricity consumption data is sourced from public databases, so it's safe to publish.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboards Preview -->
+    <section class="section" id="dashboards">
+        <div class="container">
+            <div class="step-header">
+                <div class="step-number">05</div>
+                <h2>Our Published Dashboards</h2>
+                <p class="section-desc">Preview of all three dashboards included in the Electricity Consumption Analysis workbook.</p>
+            </div>
+
+            <div class="dashboard-gallery">
+                <div class="dash-card">
+                    <div class="dash-image">
+                        <img src="dashboard1.png" alt="Dashboard 1 — Overview & Geographic Analysis" loading="lazy">
+                        <div class="dash-overlay">
+                            <span class="dash-tag">Dashboard 1</span>
+                        </div>
+                    </div>
+                    <div class="dash-info">
+                        <h3>Overview & Geographic Analysis</h3>
+                        <p>State-wise consumption maps for 2019 & 2020, regional pie chart, usage trends by year, and total consumption comparison across all 33 states.</p>
+                        <div class="dash-features">
+                            <span>🗺️ Maps</span>
+                            <span>📊 Bar Charts</span>
+                            <span>📈 Line Charts</span>
+                            <span>🥧 Pie Chart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-image">
+                        <img src="dashboard2.png" alt="Dashboard 2 — Comparative & Ranking Analysis" loading="lazy">
+                        <div class="dash-overlay">
+                            <span class="dash-tag">Dashboard 2</span>
+                        </div>
+                    </div>
+                    <div class="dash-info">
+                        <h3>Comparative & Ranking Analysis</h3>
+                        <p>Regional usage comparison, Top N and Bottom N state rankings with parameter controls, and monthly consumption patterns for 2019 & 2020.</p>
+                        <div class="dash-features">
+                            <span>🏆 Top N Filter</span>
+                            <span>📉 Bottom N Filter</span>
+                            <span>📅 Monthly View</span>
+                            <span>🔀 Grouped Bars</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-image">
+                        <img src="dashboard3.png" alt="Dashboard 3 — Deep Dive & Lockdown Analysis" loading="lazy">
+                        <div class="dash-overlay">
+                            <span class="dash-tag">Dashboard 3</span>
+                        </div>
+                    </div>
+                    <div class="dash-info">
+                        <h3>Deep Dive & Lockdown Analysis</h3>
+                        <p>COVID-19 lockdown impact analysis, monthwise top consumption heatmap, regionwise state breakdown, quarterwise usage, and metro city comparison.</p>
+                        <div class="dash-features">
+                            <span>🔒 Lockdown Impact</span>
+                            <span>🏙️ Metro Cities</span>
+                            <span>📋 Region Breakdown</span>
+                            <span>📊 Quarterly View</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>⚡ Plugging into the Future</h3>
+                    <p>An Exploration of Electricity Consumption Patterns (2019–2020)</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://public.tableau.com" target="_blank" rel="noopener">Tableau Public</a>
+                    <a href="#prepare">Back to Top</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Electricity Consumption Analysis Project. Built with Tableau Desktop.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
